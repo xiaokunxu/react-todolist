@@ -14,8 +14,14 @@ class Welcome extends React.Component {
                     date: new Date()
                 })
             })
+
+            console.log('我已经在 constructor 里将 props 和 state 初始化好了')
+        }
+        componentWillMount() {
+            console.log('运行到这里的话，说明马上就要运行 render 了')
         }
         render() {
+            console.log('这里就是 render 了')
             return ( <
                 div >
                 <
@@ -23,6 +29,9 @@ class Welcome extends React.Component {
                 h2 > { this.state.date.toString() } < /h2> < /
                 div >
             )
+        }
+        componentDidMount() {
+            console.log('已经挂载到页面里面了')
         }
     }
     //  等价于
