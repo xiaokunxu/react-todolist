@@ -10,9 +10,9 @@ class Welcome extends React.Component {
             super(props);
             this.state = { date: new Date() };
             setInterval(() => {
-                this.state = {
+                this.setState({
                     date: new Date()
-                }
+                })
             })
         }
         render() {
