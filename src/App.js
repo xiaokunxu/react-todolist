@@ -21,8 +21,8 @@ class App extends Component {
                 li >
                 <
                 TodoItem todo = { item }
-                /> <
-                /li>
+                /> < /
+                li >
             )
         })
         return ( <
@@ -32,11 +32,10 @@ class App extends Component {
             div className = "inputWrapper" >
             <
             TodoInput content = { this.state.newTodo }
-            /> < /
-            div > <
+            /> <
+            /div> <
             ol > { todos } <
-            ol / >
-            <
+            /ol> <
             /div>
         )
     }
