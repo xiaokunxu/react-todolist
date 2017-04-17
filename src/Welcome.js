@@ -6,37 +6,74 @@ import React from 'react';
 // }
 //  传递父件参数（props）
 class Welcome extends React.Component {
-        constructor(props) {
-            super(props);
-            this.state = { date: new Date() };
-            setInterval(() => {
-                this.setState({
-                    date: new Date()
-                })
+    constructor(props) {
+        super(props);
+        this.state = {
+            date: new Date(),
+            test: '1'
+        };
+        setInterval(() => {
+            this.setState({
+                date: new Date(),
+                test: 'setInterval'
             })
-
-            console.log('我已经在 constructor 里将 props 和 state 初始化好了')
-        }
-        componentWillMount() {
-            console.log('运行到这里的话，说明马上就要运行 render 了')
-        }
-        render() {
-            console.log('这里就是 render 了')
-            return ( <
-                div >
-                <
-                h1 > Hello, { this.props.name } < /h1> <
-                h2 > { this.state.date.toString() } < /h2> < /
-                div >
-            )
-        }
-        componentDidMount() {
-            console.log('已经挂载到页面里面了')
-        }
+        }, 5000)
+        console.log('我已经在 constructor 里将 props 和 state 初始化好了')
     }
-    //  等价于
-    // function Welcome(props) {
-    //     return <h1 > Hello, { props.name } < /h1>;
-    // }
+    componentWillMount() {
+        this.setState({
+            date: new Date(), // 更新 date
+            test: 'componentWillMount'
+        })
+        console.log('运行到这里的话，说明马上就要运行 render 了')
+    }
+    render() {
+        this.setState({
+            date: new Date(), // 更新 date
+            test: 'render'
+        })
+        console.log('嗯，这里是 render')
+        return ( <
+            div >
+            <
+            h1 > Hello, { this.props.name } < /h1> <
+            h2 > { this.state.date.toString() } < /h2> <
+            p > { this.state.test } < /p> < /
+            div >
+        )
+    }
+    componentDidMount() {
+        this.setState({
+            date: new Date(), // 更新 date
+            test: 'componentDidMount'
+        })
+        console.log('已经挂载到页面里了')
+    }
+    componentWillReceiveProps() {
+        this.setState({
+            date: new Date(), // 更新 date
+            test: 'componentWillReceiveProps'
+        })
+    }
+    shouldComponentUpdate() {
+        this.setState({
+            date: new Date(), // 更新 date
+            test: 'shouldComponentUpdate'
+        })
+        return true
+    }
+
+    componentWillUpdate() {
+
+    }
+
+    componentDidUpdate() {
+
+    }
+
+    componentWillUnmount() {
+        console.log('要死了')
+    }
+}
 
 export default Welcome
