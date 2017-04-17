@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import 'normalize.css';
 import './App.css';
-import TodoInput from './TodoInput'
-import TodoItem from './TodoItem'
+import TodoInput from './TodoInput';
+import TodoItem from './TodoItem';
 
 class App extends Component {
     constructor(props) {
@@ -32,11 +33,11 @@ class App extends Component {
             div className = "inputWrapper" >
             <
             TodoInput content = { this.state.newTodo }
-            /> <
-            /div> <
+            /> < /
+            div > <
             ol > { todos } <
-            /ol> <
-            /div>
+            /ol> < /
+            div >
         )
     }
 }
