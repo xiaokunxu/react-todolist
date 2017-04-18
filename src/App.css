@@ -3,9 +3,13 @@
     border: 1px solid #aaa;
     border-radius: 4px;
     background: #eee;
-    min-height: 32em;
-    min-width: 20em;
+    min-height: 40em;
+    min-width: 34em;
     box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.15)
+}
+
+.App>h1 {
+    text-align: center;
 }
 
 .App>.todoList>li:nth-child(odd) {
