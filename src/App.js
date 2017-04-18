@@ -26,7 +26,6 @@ class App extends Component {
                 li >
             )
         })
-        console.log(todos)
         return ( <
             div className = "App" >
             <
@@ -34,6 +33,7 @@ class App extends Component {
             div className = "inputWrapper" >
             <
             TodoInput content = { this.state.newTodo }
+            onChange = { this.changeTitle.bind(this) }
             onSubmit = { this.addTodo.bind(this) }
             /> < /
             div > <
@@ -41,6 +41,12 @@ class App extends Component {
             /ol> < /
             div >
         )
+    }
+    changeTitle(event) {
+        this.setState({
+            newTodo: event.target.value,
+            todoList: this.state.todoList
+        })
     }
     addTodo() {
         console.log('我得添加一个 todo 了')
