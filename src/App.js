@@ -23,6 +23,7 @@ class App extends Component {
                 <
                 TodoItem todo = { item }
                 onToggle = { this.toggle.bind(this) }
+                onDelete = { this.delete.bind(this) }
                 /> < /
                 li >
             )
@@ -45,6 +46,10 @@ class App extends Component {
     }
     onToggle(e, todo) {
         todo.status = todo.status === 'completed' ? '' : 'completed'
+        this.setState(this.state)
+    }
+    delete(event, todo) {
+        todo.deleted = true
         this.setState(this.state)
     }
     changeTitle(event) {
