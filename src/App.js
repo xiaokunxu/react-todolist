@@ -22,6 +22,7 @@ class App extends Component {
                 li key = { index } >
                 <
                 TodoItem todo = { item }
+                onToggle = { this.toggle.bind(this) }
                 /> < /
                 li >
             )
@@ -41,6 +42,10 @@ class App extends Component {
             /ol> < /
             div >
         )
+    }
+    onToggle(e, todo) {
+        todo.status = todo.status === 'completed' ? '' : 'completed'
+        this.setState(this.state)
     }
     changeTitle(event) {
         this.setState({
