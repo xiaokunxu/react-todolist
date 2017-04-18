@@ -8,6 +8,10 @@
     box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.15)
 }
 
+.App>.inputWrapper {
+    text-align: center;
+}
+
 .App>h1 {
     text-align: center;
 }
