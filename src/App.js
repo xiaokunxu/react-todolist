@@ -10,23 +10,23 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            newTodo: 'test',
+            newTodo: '',
             todoList: [
-                { id: 1, title: '第一个待办' },
-                { id: 2, title: '第二个待办' },
+
             ]
         }
     }
     render() {
         let todos = this.state.todoList.map((item, index) => {
             return ( <
-                li >
+                li key = { index } >
                 <
                 TodoItem todo = { item }
                 /> < /
                 li >
             )
         })
+        console.log(todos)
         return ( <
             div className = "App" >
             <
@@ -34,7 +34,7 @@ class App extends Component {
             div className = "inputWrapper" >
             <
             TodoInput content = { this.state.newTodo }
-            onSubmit = { this.addTodo }
+            onSubmit = { this.addTodo.bind(this) }
             /> < /
             div > <
             ol > { todos } <
