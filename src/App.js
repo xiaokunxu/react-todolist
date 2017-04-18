@@ -34,12 +34,16 @@ class App extends Component {
             div className = "inputWrapper" >
             <
             TodoInput content = { this.state.newTodo }
+            onSubmit = { this.addTodo }
             /> < /
             div > <
             ol > { todos } <
             /ol> < /
             div >
         )
+    }
+    addTodo() {
+        console.log('我得添加一个 todo 了')
     }
 }
 
