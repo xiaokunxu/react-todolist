@@ -9,6 +9,24 @@
     padding: 0.5em;
 }
 
+.TodoItem>.toggle {
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.toggle:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 100 100"><circle cx="30" cy="30" r="20" fill="transparent " stroke="#ed5565" stroke-width="3"/></svg>');
+}
+
+.toggle:checked:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 100 100"><circle cx="30" cy="30" r="20" fill="transparent " stroke="#11abb0" stroke-width="3"/><circle cx="30" cy="30" r="10" stroke="#11abb0" fill="#11abb0" stroke-width="1"/></svg>');
+}
+
 .TodoItem>.btn {
     padding: 0.3em 0.8em;
     border-radius: 4px;
@@ -16,4 +34,5 @@
     background: #11abb0;
     color: #fff;
     cursor: pointer;
+    outline: none;
 }

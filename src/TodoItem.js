@@ -7,9 +7,11 @@ export default class TodoItem extends Component {
             div className = "TodoItem" >
             <
             input type = "checkbox"
+            className = "toggle"
             checked = { this.props.todo.status === 'completed' }
             onChange = { this.toggle.bind(this) }
-            />  <
+            / >
+            <
             span className = "title" > { this.props.todo.title } < /span> <
             button className = "btn"
             onClick = { this.delete.bind(this) } > 删除 < /button> < /
